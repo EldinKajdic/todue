@@ -1,0 +1,17 @@
+{
+  "name": "ToDue",
+  "displayName": "ToDue",
+  "expo": {
+    "name": "ToDue",
+    "slug": "ToDue",
+    "version": "1.0.0",
+    "platforms": [
+      "ios",
+      "android",
+      "web"
+    ],
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
