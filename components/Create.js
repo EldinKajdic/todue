@@ -30,7 +30,14 @@ export class Create extends Component {
   }
 
   onSave = () => {
-    storageHelper.setInvoiceToStorage(this.state);
+    storageHelper.setInvoiceToStorage(this.state).then(success => {
+      if (success) {
+
+      }
+      else {
+        
+      }
+    });
   };
 
   render() {

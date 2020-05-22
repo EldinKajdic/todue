@@ -1,9 +1,14 @@
 import React, { Component } from "react";
 import { Text, View, StyleSheet } from "react-native";
+import { CheckBox } from "react-native-elements";
 
 export class Invoice extends Component {
   state = {
     invoice: this.props.route.params.item,
+  };
+
+  isPaidClicked = () => {
+    this.setState({ isPaid: !this.state.isPaid });
   };
 
   getAmountTitle() {
@@ -55,6 +60,13 @@ export class Invoice extends Component {
         <View style={styles.invoiceContainer}>
           <Text style={styles.invoiceRowTitle}>Förfaller:</Text>
           <Text style={styles.invoiceRowText}>{this.getDueDate()}</Text>
+        </View>
+        <View style={styles.invoiceContainer}>
+          <CheckBox
+            title="Fakturan är betald"
+            checked={this.state.isPaid}
+            onPress={() => this.isPaidClicked()}
+          />
         </View>
       </View>
     );

@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { View, StyleSheet, Text, AsyncStorage } from "react-native";
+import { View, StyleSheet, Text } from "react-native";
 import PayList from "./PayList";
 import { Button } from "react-native-elements";
 import Icon from "react-native-vector-icons/FontAwesome";

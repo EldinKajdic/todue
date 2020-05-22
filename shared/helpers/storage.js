@@ -1,6 +1,10 @@
 import { AsyncStorage } from "react-native";
+import UUIDGenerator from "react-native-uuid-generator";
 
 const storageHelper = {
+  reset() {
+    AsyncStorage.clear();
+  },
   async getInvoicesFromStorage() {
     try {
       let invoices = await AsyncStorage.getItem("invoices");
@@ -12,8 +16,14 @@ const storageHelper = {
   },
   async setInvoiceToStorage(item) {
     var invoiceArray = [];
+    var id;
+
+    UUIDGenerator.getRandomUUID().then((uuid) => {
+      id = uuid;
+    });
 
     let invoice = {
+      id: id,
       company: item.company,
       amount: item.amount,
       currency: "kr",
@@ -23,24 +33,23 @@ const storageHelper = {
     };
 
     await this.getInvoicesFromStorage().then((invoices) => {
-      console.log(invoices);
       if (invoices !== null) {
         invoiceArray = invoices;
         console.log(invoiceArray);
       }
     });
 
-    console.log(invoiceArray);
     invoiceArray.push(invoice);
-    console.log("----------");
-    console.log(invoiceArray);
 
     try {
       await AsyncStorage.setItem("invoices", JSON.stringify(invoiceArray));
+      return true;
     } catch (error) {
       console.log(error);
+      return false;
     }
   },
+  setIsPaid(id, val) {},
 };
 
 export default storageHelper;

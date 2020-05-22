@@ -67,7 +67,7 @@ export class PayList extends Component {
           .map((item, i) => (
             <ListItem
               key={i}
-              title={item.company}
+              title={item.company + ": " + item.amount + item.currency}
               leftIcon={{ name: this.getIcon(item.invoiceType) }}
               bottomDivider
               chevron
