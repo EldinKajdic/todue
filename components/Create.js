@@ -7,10 +7,12 @@ import storageHelper from "../shared/helpers/storage";
 
 export class Create extends Component {
   mode = "date";
+
   state = {
     dueDate: new Date(),
     invoiceType: "rent",
     reoccuring: false,
+    invoices: this.props.route.params.invoices,
   };
 
   saveValue(val, type) {
@@ -30,12 +32,10 @@ export class Create extends Component {
   }
 
   onSave = () => {
-    storageHelper.setInvoiceToStorage(this.state).then(success => {
+    storageHelper.setInvoiceToStorage(this.state).then((success) => {
       if (success) {
-
-      }
-      else {
-        
+        this.props.navigation.goBack();
+      } else {
       }
     });
   };

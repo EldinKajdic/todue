@@ -62,7 +62,6 @@ const storageHelper = {
     var invoiceArray = [];
     await this.getInvoicesFromStorage().then((invoices) => {
       if (invoices !== null) {
-        console.log(id);
         invoices.find((inv) => inv.id == id).isPaid = val;
       }
       invoiceArray = invoices;

@@ -3,11 +3,17 @@ import { View } from "react-native";
 import { ListItem } from "react-native-elements";
 
 export class PayList extends Component {
-  list = [];
-
   constructor(props) {
     super(props);
-    this.list = this.props.invoices;
+    this.state = {
+      list: this.props.invoices,
+    };
+  }
+
+  componentDidUpdate(prevProps) {
+    if (prevProps.invoices != this.props.invoices) {
+      this.setState({ list: this.props.invoices });
+    }
   }
 
   getBadgeColor = (item) => {
@@ -61,7 +67,7 @@ export class PayList extends Component {
   render() {
     return (
       <View>
-        {this.list
+        {this.state.list
           .sort((a, b) => (a.dueDate > b.dueDate ? 1 : -1))
           .map((item, i) => (
             <ListItem

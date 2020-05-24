@@ -10,7 +10,6 @@ export class Invoice extends Component {
   };
 
   isPaidClicked = () => {
-    console.log(this.state.invoice);
     storageHelper
       .setIsPaid(this.state.invoice.id, !this.state.invoice.isPaid)
       .then((success) => {
@@ -59,7 +58,10 @@ export class Invoice extends Component {
       .deleteItemFromStorage(this.state.invoice.id)
       .then((success) => {
         if (success) {
-          console.log("Removed " + this.state.invoice.id);
+          if (success) {
+            this.props.navigation.goBack();
+          } else {
+          }
         } else {
         }
       });

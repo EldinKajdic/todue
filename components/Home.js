@@ -10,10 +10,27 @@ export class Home extends Component {
     super(props);
     this.state = {
       fetching: true,
+      invoices: [],
     };
   }
 
   componentDidMount() {
+    this.updateView();
+
+    this._unsubscribe = this.props.navigation.addListener("focus", () => {
+      this.updateView();
+    });
+  }
+
+  componentWillUnmount() {
+    this._unsubscribe();
+  }
+
+  updateView() {
+    this.getInvoicesFromStorage();
+  }
+
+  getInvoicesFromStorage() {
     storageHelper.getInvoicesFromStorage().then((x) => {
       if (x !== null) {
         this.setState({ invoices: x, fetching: false });
@@ -29,15 +46,21 @@ export class Home extends Component {
     });
   };
 
-  navigate = (url) => {
-    this.props.navigation.navigate(url, {});
+  navigate = (url, prop) => {
+    this.props.navigation.navigate(url, { prop });
   };
 
   render() {
     if (!this.state.fetching) {
       return (
         <View style={styles.container}>
-          <Text style={styles.header}>Dina fakturor</Text>
+          <Text style={styles.header}>Välkommen!</Text>
+          <Text style={styles.subheader}>
+            {" "}
+            {this.state.invoices.length > 0
+              ? "Dina fakturor"
+              : "Du har inga fakturor"}{" "}
+          </Text>
           <PayList
             onSelected={this.onSelected}
             invoices={this.state.invoices}
@@ -53,7 +76,7 @@ export class Home extends Component {
             }
             title="Lägg till ny faktura"
             style={styles.buttonAdd}
-            onPress={() => this.navigate("Create")}
+            onPress={() => this.navigate("Create", this.state.invoices)}
           />
         </View>
       );
@@ -67,6 +90,13 @@ const styles = StyleSheet.create({
   header: {
     textAlign: "center",
     fontSize: 36,
+    fontWeight: "bold",
+    marginTop: 10,
+    marginBottom: 10,
+  },
+  subheader: {
+    textAlign: "center",
+    fontSize: 30,
     fontWeight: "bold",
     marginTop: 10,
     marginBottom: 10,
