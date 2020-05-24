@@ -1,5 +1,4 @@
 import { AsyncStorage } from "react-native";
-import UUIDGenerator from "react-native-uuid-generator";
 
 const storageHelper = {
   reset() {
@@ -16,11 +15,7 @@ const storageHelper = {
   },
   async setInvoiceToStorage(item) {
     var invoiceArray = [];
-    var id;
-
-    UUIDGenerator.getRandomUUID().then((uuid) => {
-      id = uuid;
-    });
+    var id = this.generateUuid();
 
     let invoice = {
       id: id,
@@ -35,7 +30,6 @@ const storageHelper = {
     await this.getInvoicesFromStorage().then((invoices) => {
       if (invoices !== null) {
         invoiceArray = invoices;
-        console.log(invoiceArray);
       }
     });
 
@@ -49,7 +43,47 @@ const storageHelper = {
       return false;
     }
   },
-  setIsPaid(id, val) {},
+  async deleteItemFromStorage(id) {
+    var invoiceArray = [];
+    await this.getInvoicesFromStorage().then((invoices) => {
+      if (invoices !== null) {
+        invoiceArray = invoices.filter((inv) => inv.id !== id);
+      }
+    });
+    try {
+      await AsyncStorage.setItem("invoices", JSON.stringify(invoiceArray));
+      return true;
+    } catch (error) {
+      console.log(error);
+      return false;
+    }
+  },
+  async setIsPaid(id, val) {
+    var invoiceArray = [];
+    await this.getInvoicesFromStorage().then((invoices) => {
+      if (invoices !== null) {
+        console.log(id);
+        invoices.find((inv) => inv.id == id).isPaid = val;
+      }
+      invoiceArray = invoices;
+    });
+    try {
+      await AsyncStorage.setItem("invoices", JSON.stringify(invoiceArray));
+      return true;
+    } catch (error) {
+      console.log(error);
+      return false;
+    }
+  },
+  generateUuid() {
+    return "xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(/[xy]/g, function (
+      c
+    ) {
+      var r = (Math.random() * 16) | 0,
+        v = c == "x" ? r : (r & 0x3) | 0x8;
+      return v.toString(16);
+    });
+  },
 };
 
 export default storageHelper;

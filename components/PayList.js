@@ -20,14 +20,13 @@ export class PayList extends Component {
       date.toLocaleDateString("sv-SE", options) ==
       dueDate.toLocaleDateString("sv-SE", options);
     let expired = date > dueDate;
-    console.log(expired);
-    if (expired) {
+    if (item.isPaid) {
+      return "green";
+    } else if (expired) {
       return "red";
-    }
-    if (!item.isPaid && sameMonth) {
+    } else if (!item.isPaid && sameMonth) {
       return "orange";
-    }
-    if (!item.isPaid && !expired) {
+    } else if (!item.isPaid && !expired) {
       return "blue";
     }
     return "green";
