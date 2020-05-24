@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import { Text, View, StyleSheet } from "react-native";
-import { CheckBox } from "react-native-elements";
+import Icon from "react-native-vector-icons/FontAwesome";
+import { Button, CheckBox } from "react-native-elements";
+import storageHelper from "../shared/helpers/storage";
 
 export class Invoice extends Component {
   state = {
@@ -8,7 +10,19 @@ export class Invoice extends Component {
   };
 
   isPaidClicked = () => {
-    this.setState({ isPaid: !this.state.isPaid });
+    console.log(this.state.invoice);
+    storageHelper
+      .setIsPaid(this.state.invoice.id, !this.state.invoice.isPaid)
+      .then((success) => {
+        if (success) {
+          this.setState({
+            invoice: {
+              ...this.state.invoice,
+              isPaid: !this.state.invoice.isPaid,
+            },
+          });
+        }
+      });
   };
 
   getAmountTitle() {
@@ -40,8 +54,18 @@ export class Invoice extends Component {
     );
   }
 
+  onDelete = () => {
+    storageHelper
+      .deleteItemFromStorage(this.state.invoice.id)
+      .then((success) => {
+        if (success) {
+          console.log("Removed " + this.state.invoice.id);
+        } else {
+        }
+      });
+  };
+
   render() {
-    console.log(this.state);
     return (
       <View style={styles.container}>
         <Text style={styles.header}>{this.state.invoice.company}</Text>
@@ -64,10 +88,24 @@ export class Invoice extends Component {
         <View style={styles.invoiceContainer}>
           <CheckBox
             title="Fakturan är betald"
-            checked={this.state.isPaid}
+            checked={this.state.invoice.isPaid}
             onPress={() => this.isPaidClicked()}
           />
         </View>
+        <Button
+          icon={
+            <Icon
+              name="trash"
+              size={25}
+              color="white"
+              style={styles.buttonIcon}
+            />
+          }
+          buttonStyle={{ backgroundColor: "#d12304" }}
+          title="Radera faktura"
+          style={styles.button}
+          onPress={() => this.onDelete()}
+        />
       </View>
     );
   }
@@ -98,6 +136,12 @@ const styles = StyleSheet.create({
   invoiceRowText: {
     fontSize: 20,
     textAlign: "center",
+  },
+  buttonIcon: {
+    marginRight: 10,
+  },
+  button: {
+    padding: 20,
   },
 });
 
