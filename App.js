@@ -31,7 +31,7 @@ export default function App() {
           name="Invoice"
           component={Invoice}
           options={{
-            title: "Fakturadetaljer",
+            title: "Detaljer",
             headerStyle: {
               backgroundColor: "#3270c7",
             },
@@ -46,7 +46,7 @@ export default function App() {
           name="Create"
           component={Create}
           options={{
-            title: "Ny faktura",
+            title: "Faktura",
             headerStyle: {
               backgroundColor: "#3270c7",
             },

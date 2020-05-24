@@ -9,6 +9,15 @@ export class Invoice extends Component {
     invoice: this.props.route.params.item,
   };
 
+  componentDidMount() {
+    this._unsubscribe = this.props.navigation.addListener("focus", () => {
+      let invoice = this.props.route.params.item;
+      if (this.state.invoice != invoice) {
+        this.setState({ invoice });
+      }
+    });
+  }
+
   isPaidClicked = () => {
     storageHelper
       .setIsPaid(this.state.invoice.id, !this.state.invoice.isPaid)
@@ -67,6 +76,13 @@ export class Invoice extends Component {
       });
   };
 
+  onEdit = () => {
+    let invoice = this.state.invoice;
+    this.props.navigation.navigate("Create", {
+      invoice,
+    });
+  };
+
   render() {
     return (
       <View style={styles.container}>
@@ -97,13 +113,27 @@ export class Invoice extends Component {
         <Button
           icon={
             <Icon
+              name="pencil"
+              size={25}
+              color="white"
+              style={styles.buttonIcon}
+            />
+          }
+          buttonStyle={{ backgroundColor: "#32a852", height: 50 }}
+          title="Redigera faktura"
+          style={styles.button}
+          onPress={() => this.onEdit()}
+        />
+        <Button
+          icon={
+            <Icon
               name="trash"
               size={25}
               color="white"
               style={styles.buttonIcon}
             />
           }
-          buttonStyle={{ backgroundColor: "#d12304" }}
+          buttonStyle={{ backgroundColor: "#d12304", height: 50 }}
           title="Radera faktura"
           style={styles.button}
           onPress={() => this.onDelete()}
@@ -144,6 +174,7 @@ const styles = StyleSheet.create({
   },
   button: {
     padding: 20,
+    paddingBottom: 0,
   },
 });
 

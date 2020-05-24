@@ -14,25 +14,25 @@
 		13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB11A68108700A75B9A /* LaunchScreen.xib */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
-		7B0C5784998A29E517983E0C /* libPods-ToDue.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2502ACF51380E8237829647D /* libPods-ToDue.a */; };
+		7B0C5784998A29E517983E0C /* libPods-Todue.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2502ACF51380E8237829647D /* libPods-Todue.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		008F07F21AC5B25A0029DE68 /* main.jsbundle */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = main.jsbundle; sourceTree = "<group>"; };
-		056F63395CAC2B8C2DC048FE /* Pods-ToDue.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ToDue.debug.xcconfig"; path = "Target Support Files/Pods-ToDue/Pods-ToDue.debug.xcconfig"; sourceTree = "<group>"; };
-		07287ACC2432831900C893F0 /* app.manifest */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = app.manifest; path = "ToDue/Supporting/app.manifest"; sourceTree = "<group>"; };
-		07287ACD2432831900C893F0 /* app.bundle */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = app.bundle; path = "ToDue/Supporting/app.bundle"; sourceTree = "<group>"; };
-		0731D3BB24204D9B009CAE85 /* Expo.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Expo.plist; path = ToDue/Supporting/Expo.plist; sourceTree = "<group>"; };
-		13B07F961A680F5B00A75B9A /* ToDue.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToDue.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = ToDue/AppDelegate.h; sourceTree = "<group>"; };
-		13B07FB01A68108700A75B9A /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = ToDue/AppDelegate.m; sourceTree = "<group>"; };
+		056F63395CAC2B8C2DC048FE /* Pods-Todue.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Todue.debug.xcconfig"; path = "Target Support Files/Pods-Todue/Pods-Todue.debug.xcconfig"; sourceTree = "<group>"; };
+		07287ACC2432831900C893F0 /* app.manifest */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = app.manifest; path = "Todue/Supporting/app.manifest"; sourceTree = "<group>"; };
+		07287ACD2432831900C893F0 /* app.bundle */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = app.bundle; path = "Todue/Supporting/app.bundle"; sourceTree = "<group>"; };
+		0731D3BB24204D9B009CAE85 /* Expo.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Expo.plist; path = Todue/Supporting/Expo.plist; sourceTree = "<group>"; };
+		13B07F961A680F5B00A75B9A /* Todue.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Todue.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = Todue/AppDelegate.h; sourceTree = "<group>"; };
+		13B07FB01A68108700A75B9A /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = Todue/AppDelegate.m; sourceTree = "<group>"; };
 		13B07FB21A68108700A75B9A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = ToDue/Images.xcassets; sourceTree = "<group>"; };
-		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = ToDue/Info.plist; sourceTree = "<group>"; };
-		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = ToDue/main.m; sourceTree = "<group>"; };
-		2502ACF51380E8237829647D /* libPods-ToDue.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ToDue.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = Todue/Images.xcassets; sourceTree = "<group>"; };
+		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = Todue/Info.plist; sourceTree = "<group>"; };
+		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = Todue/main.m; sourceTree = "<group>"; };
+		2502ACF51380E8237829647D /* libPods-Todue.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Todue.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D16E6891FA4F8E400B85C8A /* libReact.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libReact.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		E40B1F720DE0D29BF6B90074 /* Pods-ToDue.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ToDue.release.xcconfig"; path = "Target Support Files/Pods-ToDue/Pods-ToDue.release.xcconfig"; sourceTree = "<group>"; };
+		E40B1F720DE0D29BF6B90074 /* Pods-Todue.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Todue.release.xcconfig"; path = "Target Support Files/Pods-Todue/Pods-Todue.release.xcconfig"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		ED2971642150620600B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS12.0.sdk/System/Library/Frameworks/JavaScriptCore.framework; sourceTree = DEVELOPER_DIR; };
 /* End PBXFileReference section */
@@ -42,14 +42,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7B0C5784998A29E517983E0C /* libPods-ToDue.a in Frameworks */,
+				7B0C5784998A29E517983E0C /* libPods-Todue.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		13B07FAE1A68108700A75B9A /* ToDue */ = {
+		13B07FAE1A68108700A75B9A /* Todue */ = {
 			isa = PBXGroup;
 			children = (
 				008F07F21AC5B25A0029DE68 /* main.jsbundle */,
@@ -63,7 +63,7 @@
 				07287ACD2432831900C893F0 /* app.bundle */,
 				07287ACC2432831900C893F0 /* app.manifest */,
 			);
-			name = ToDue;
+			name = Todue;
 			sourceTree = "<group>";
 		};
 		2D16E6871FA4F8E400B85C8A /* Frameworks */ = {
@@ -72,7 +72,7 @@
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
 				ED2971642150620600B7C4FE /* JavaScriptCore.framework */,
 				2D16E6891FA4F8E400B85C8A /* libReact.a */,
-				2502ACF51380E8237829647D /* libPods-ToDue.a */,
+				2502ACF51380E8237829647D /* libPods-Todue.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -80,8 +80,8 @@
 		6C68EC841F3FBF9CD21359E0 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				056F63395CAC2B8C2DC048FE /* Pods-ToDue.debug.xcconfig */,
-				E40B1F720DE0D29BF6B90074 /* Pods-ToDue.release.xcconfig */,
+				056F63395CAC2B8C2DC048FE /* Pods-Todue.debug.xcconfig */,
+				E40B1F720DE0D29BF6B90074 /* Pods-Todue.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -96,7 +96,7 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
-				13B07FAE1A68108700A75B9A /* ToDue */,
+				13B07FAE1A68108700A75B9A /* Todue */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
@@ -110,7 +110,7 @@
 		83CBBA001A601CBA00E9B192 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				13B07F961A680F5B00A75B9A /* ToDue.app */,
+				13B07F961A680F5B00A75B9A /* Todue.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -118,9 +118,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		13B07F861A680F5B00A75B9A /* ToDue */ = {
+		13B07F861A680F5B00A75B9A /* Todue */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "ToDue" */;
+			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "Todue" */;
 			buildPhases = (
 				56DD4AB7BC040A533152C46D /* [CP] Check Pods Manifest.lock */,
 				FD4C38642228810C00325AF5 /* Start Packager */,
@@ -133,9 +133,9 @@
 			);
 			dependencies = (
 			);
-			name = ToDue;
+			name = Todue;
 			productName = "Hello World";
-			productReference = 13B07F961A680F5B00A75B9A /* ToDue.app */;
+			productReference = 13B07F961A680F5B00A75B9A /* Todue.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -147,7 +147,7 @@
 				LastUpgradeCheck = 0940;
 				ORGANIZATIONNAME = Facebook;
 			};
-			buildConfigurationList = 83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "ToDue" */;
+			buildConfigurationList = 83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "Todue" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -161,7 +161,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				13B07F861A680F5B00A75B9A /* ToDue */,
+				13B07F861A680F5B00A75B9A /* Todue */,
 			);
 		};
 /* End PBXProject section */
@@ -211,7 +211,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-ToDue-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-Todue-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -258,7 +258,7 @@
 				13B07FB21A68108700A75B9A /* Base */,
 			);
 			name = LaunchScreen.xib;
-			path = ToDue;
+			path = Todue;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -266,12 +266,12 @@
 /* Begin XCBuildConfiguration section */
 		13B07F941A680F5B00A75B9A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 056F63395CAC2B8C2DC048FE /* Pods-ToDue.debug.xcconfig */;
+			baseConfigurationReference = 056F63395CAC2B8C2DC048FE /* Pods-Todue.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = NO;
-				INFOPLIST_FILE = ToDue/Info.plist;
+				INFOPLIST_FILE = Todue/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
 					"$(inherited)",
@@ -279,18 +279,18 @@
 					"-lc++",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = ToDue;
+				PRODUCT_NAME = Todue;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Debug;
 		};
 		13B07F951A680F5B00A75B9A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E40B1F720DE0D29BF6B90074 /* Pods-ToDue.release.xcconfig */;
+			baseConfigurationReference = E40B1F720DE0D29BF6B90074 /* Pods-Todue.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CURRENT_PROJECT_VERSION = 1;
-				INFOPLIST_FILE = ToDue/Info.plist;
+				INFOPLIST_FILE = Todue/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
 					"$(inherited)",
@@ -298,7 +298,7 @@
 					"-lc++",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = ToDue;
+				PRODUCT_NAME = Todue;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Release;
@@ -405,7 +405,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "ToDue" */ = {
+		13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "Todue" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				13B07F941A680F5B00A75B9A /* Debug */,
@@ -414,7 +414,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "ToDue" */ = {
+		83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "Todue" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				83CBBA201A601CBA00E9B192 /* Debug */,

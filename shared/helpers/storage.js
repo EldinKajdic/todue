@@ -15,16 +15,16 @@ const storageHelper = {
   },
   async setInvoiceToStorage(item) {
     var invoiceArray = [];
-    var id = this.generateUuid();
 
     let invoice = {
-      id: id,
-      company: item.company,
-      amount: item.amount,
+      id: this.generateUuid(),
+      company: item.company.trim(),
+      amount: item.amount.trim(),
       currency: "kr",
       isPaid: false,
       dueDate: item.dueDate,
       invoiceType: item.invoiceType,
+      reoccurring: item.reoccurring,
     };
 
     await this.getInvoicesFromStorage().then((invoices) => {
@@ -35,6 +35,23 @@ const storageHelper = {
 
     invoiceArray.push(invoice);
 
+    try {
+      await AsyncStorage.setItem("invoices", JSON.stringify(invoiceArray));
+      return true;
+    } catch (error) {
+      console.log(error);
+      return false;
+    }
+  },
+  async editInvoice(val) {
+    var invoiceArray = [];
+    await this.getInvoicesFromStorage().then((invoices) => {
+      if (invoices !== null) {
+        let index = invoices.findIndex((inv) => inv.id == val.id);
+        invoices[index] = val;
+      }
+      invoiceArray = invoices;
+    });
     try {
       await AsyncStorage.setItem("invoices", JSON.stringify(invoiceArray));
       return true;

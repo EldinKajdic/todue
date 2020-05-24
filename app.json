@@ -1,17 +1,25 @@
 {
-  "name": "ToDue",
-  "displayName": "ToDue",
+  "name": "Todue",
+  "displayName": "Todue",
   "expo": {
-    "name": "ToDue",
-    "slug": "ToDue",
+    "name": "Todue",
+    "slug": "Todue",
+    "orientation": "portrait",
+    "icon": "./assets/images/logo.jpeg",
+    "splash": {
+      "image": "./assets/images/logo.jpeg",
+      "resizeMode": "contain"
+    },
+    "ios": {
+      "bundleIdentifier": "com.eldinkajdic.todue",
+      "buildNumber": "1.0.0"
+    },
+    "android": {
+      "package": "com.eldinkajdic.todue",
+      "versionCode": 1
+    },
     "version": "1.0.0",
-    "platforms": [
-      "ios",
-      "android",
-      "web"
-    ],
-    "assetBundlePatterns": [
-      "**/*"
-    ]
+    "platforms": ["ios", "android", "web"],
+    "assetBundlePatterns": ["**/*"]
   }
 }

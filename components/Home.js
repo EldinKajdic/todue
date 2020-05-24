@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { View, StyleSheet, Text } from "react-native";
+import { View, StyleSheet, Text, ScrollView } from "react-native";
 import PayList from "./PayList";
 import { Button } from "react-native-elements";
 import Icon from "react-native-vector-icons/FontAwesome";
@@ -54,30 +54,32 @@ export class Home extends Component {
     if (!this.state.fetching) {
       return (
         <View style={styles.container}>
-          <Text style={styles.header}>Välkommen!</Text>
-          <Text style={styles.subheader}>
-            {" "}
-            {this.state.invoices.length > 0
-              ? "Dina fakturor"
-              : "Du har inga fakturor"}{" "}
-          </Text>
-          <PayList
-            onSelected={this.onSelected}
-            invoices={this.state.invoices}
-          ></PayList>
-          <Button
-            icon={
-              <Icon
-                name="plus"
-                size={25}
-                color="white"
-                style={styles.iconAdd}
-              />
-            }
-            title="Lägg till ny faktura"
-            style={styles.buttonAdd}
-            onPress={() => this.navigate("Create", this.state.invoices)}
-          />
+          <ScrollView>
+            <Text style={styles.header}>Välkommen!</Text>
+            <Text style={styles.subheader}>
+              {" "}
+              {this.state.invoices.length > 0
+                ? "Dina fakturor"
+                : "Du har inga fakturor"}{" "}
+            </Text>
+            <PayList
+              onSelected={this.onSelected}
+              invoices={this.state.invoices}
+            ></PayList>
+            <Button
+              icon={
+                <Icon
+                  name="plus"
+                  size={25}
+                  color="white"
+                  style={styles.iconAdd}
+                />
+              }
+              title="Lägg till ny faktura"
+              style={styles.buttonAdd}
+              onPress={() => this.navigate("Create", this.state.invoices)}
+            />
+          </ScrollView>
         </View>
       );
     } else {

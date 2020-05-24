@@ -7,13 +7,31 @@ import storageHelper from "../shared/helpers/storage";
 
 export class Create extends Component {
   mode = "date";
+  isEdit = false;
 
-  state = {
-    dueDate: new Date(),
-    invoiceType: "rent",
-    reoccuring: false,
-    invoices: this.props.route.params.invoices,
-  };
+  constructor(props) {
+    super(props);
+    let invoice = this.props.route.params.invoice;
+    if (invoice) {
+      this.isEdit = true;
+      this.state = {
+        id: invoice.id,
+        dueDate: new Date(invoice.dueDate),
+        invoiceType: invoice.invoiceType,
+        reoccurring: invoice.reoccurring,
+        company: invoice.company,
+        amount: invoice.amount,
+        isPaid: invoice.isPaid,
+        currency: invoice.currency,
+      };
+    } else {
+      this.state = {
+        dueDate: new Date(),
+        invoiceType: "rent",
+        reoccurring: false,
+      };
+    }
+  }
 
   saveValue(val, type) {
     if (val !== null) {
@@ -32,12 +50,25 @@ export class Create extends Component {
   }
 
   onSave = () => {
-    storageHelper.setInvoiceToStorage(this.state).then((success) => {
-      if (success) {
-        this.props.navigation.goBack();
-      } else {
-      }
-    });
+    if (!this.isEdit) {
+      storageHelper.setInvoiceToStorage(this.state).then((success) => {
+        if (success) {
+          this.props.navigation.goBack();
+        } else {
+        }
+      });
+    } else {
+      storageHelper.editInvoice(this.state).then((success) => {
+        if (success) {
+          let item = JSON.stringify(this.state);
+          item = JSON.parse(item);
+          this.props.navigation.navigate("Invoice", {
+            item,
+          });
+        } else {
+        }
+      });
+    }
   };
 
   render() {
@@ -45,15 +76,18 @@ export class Create extends Component {
     return (
       <View style={styles.container}>
         <ScrollView>
-          <Text style={styles.header}>Lägg till ny faktura</Text>
+          <Text style={styles.header}>
+            {this.isEdit ? "Ändra faktura" : "Lägg till ny faktura"}
+          </Text>
           <View style={styles.inputContainer}>
             <Input
-              placeholder="Företag / organisation"
+              placeholder="Företag"
               autoCapitalize="words"
+              value={this.state.company}
               maxLength={50}
               returnKeyType="next"
               clearButtonMode="while-editing"
-              onBlur={(res) => this.saveValue(res.nativeEvent.text, "company")}
+              onChangeText={(text) => this.saveValue(text, "company")}
               leftIcon={
                 <Icon
                   name="building"
@@ -66,9 +100,10 @@ export class Create extends Component {
             <Input
               placeholder="Belopp"
               keyboardType="numeric"
+              value={this.state.amount}
               returnKeyType="next"
               clearButtonMode="while-editing"
-              onBlur={(res) => this.saveValue(res.nativeEvent.text, "amount")}
+              onChangeText={(text) => this.saveValue(text, "amount")}
               maxLength={10}
               leftIcon={
                 <Icon
@@ -115,9 +150,9 @@ export class Create extends Component {
             </Picker>
             <CheckBox
               title="Återkommande faktura"
-              checked={this.state.reoccuring}
+              checked={this.state.reoccurring}
               onPress={() =>
-                this.setState({ reoccuring: !this.state.reoccuring })
+                this.setState({ reoccurring: !this.state.reoccurring })
               }
             />
           </View>
