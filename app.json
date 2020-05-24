@@ -5,10 +5,11 @@
     "name": "Todue",
     "slug": "Todue",
     "orientation": "portrait",
-    "icon": "./assets/images/logo.jpeg",
+    "icon": "./assets/icons/ios/AppIcon.appiconset/Icon-App-83.5x83.5@2x.png",
     "splash": {
-      "image": "./assets/images/logo.jpeg",
-      "resizeMode": "contain"
+      "image": "./assets/images/static/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#94bee6"
     },
     "ios": {
       "bundleIdentifier": "com.eldinkajdic.todue",
